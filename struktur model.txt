@@ -1,0 +1,56 @@
+App
+    Company Profile
+
+General:
+    - title
+    - description
+    - image carousel
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+About:
+    - title
+    - content
+    - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+Produk:
+    - title
+    - product name
+    - description
+    - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+Contact:
+    - title
+    - description
+    - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+Gallery:
+    - title
+    - description
+    - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+Clients:
+    - title
+    - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} Tentang Kami {% endblock %}
+
+{% block slider %}{%endblock %}
+
+{% block content %}
+
+<!-- Page title -->
+<section id="page-title" class="background-overlay" data-parallax-image="{% static 'img/tentang kami.jpg' %}">
+	<div class="container">
+		<div class="page-title">
+			<h1 class="text-uppercase text-medium">Tentang Kami</h1>
+			<span>Work is easy when you have all tools around you!</span>
+		</div>
+	</div>
+</section>
+<!-- end: Page title -->
+<section class="p-b-10">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="heading heading text-left">
+					<h2>Hebat Kaos</h2>
+					<span class="lead">Sprint merupakan badan usaha berbentuk CV yang bergerak dibidang produksi kaos berdiri sejak 2017 yang beralamat di jalan Gang H.Somad. Cirendeu - Tangerang Selatan.<br><br> Sehari kami mampu memproduksi sebanyak 200 kaos yang siap jahit. Tenaga kerja yang kami miliki terdiri dari 2 orang penjahit. 1 orang pembuat pola dan pemotong kain, 1 orang penyetrika, 1 orang pengendalian utu dan 1 orang pesuruh. </span>
+				</div>
+			</div>
+			<div class="col-md-6 m-t-60">
+                <img src="{% static 'img/about.jpg' %}" class="img-responsive img-rounded" alt=""> 
+            </div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
