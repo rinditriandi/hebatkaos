@@ -1246,7 +1246,7 @@ Main Menu
         #mainMenu nav > ul > li.current > span, #mainMenu nav > ul > li:hover > a,
         #mainMenu nav > ul > li:hover > span, #mainMenu nav > ul > li:focus > a,
         #mainMenu nav > ul > li:focus > span {
-          color: #1abc9c; }
+          color: #00a79d; }
         #mainMenu nav > ul > li .dropdown-menu {
           background-position: right bottom;
           background-repeat: no-repeat;
@@ -10494,7 +10494,7 @@ body.device-xxs .text-medium-light {
 .text-dark label,
 .text-dark div:not(.alert),
 .text-dark span:not(.btn-label) {
-  color: #111 !important; }
+  color: #111; }
 
 .text-grey,
 .text-grey h1,
@@ -13270,10 +13270,10 @@ footer.background-grey .copyright-content {
 #footer.footer-light {
   background-color: #f7f7f7;
   border-top: 1px solid #e5e5e5; }
-  #footer.footer-light,
+  /* #footer.footer-light,
   #footer.footer-light .widget h4,
   #footer.footer-light a {
-    color: #494949 !important; }
+    color: #494949 !important; } */
   #footer.footer-light span {
     color: #898989 !important; }
   #footer.footer-light .copyright-content {

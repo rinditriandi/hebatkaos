@@ -1,5 +1,5 @@
 App
-    Company Profile
+    Company Profile Hebat kaos
 
 General:
     - title
@@ -19,11 +19,21 @@ About:
     - umodified
     - dmodified
 
-Produk:
-    - title
+Product:
     - product name
     - description
+    - product type (kaos polos, kaos hoodie, raglan)
     - image
+    - ucreate
+    - dreate
+    - umodified
+    - dmodified
+
+Pricelist:
+    - product (Foreign Key)
+    - size
+    - model (panjang, pendek, one-neck, v-neck)
+    - price
     - ucreate
     - dreate
     - umodified
@@ -48,7 +58,7 @@ Gallery:
     - dmodified
 
 Clients:
-    - title
+    - client name
     - image
     - ucreate
     - dreate

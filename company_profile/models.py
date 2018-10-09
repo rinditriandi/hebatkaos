@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.template.defaultfilters import slugify
 from django.db import models
 
 class General(models.Model):
@@ -38,3 +39,41 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+class GalleryCategory(models.Model):
+    category        = models.CharField(max_length=128)
+    Slug            = models.SlugField(max_length=128, blank=True, null=True, unique=True)
+    image_category  = models.ImageField(upload_to='gallery')
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+
+    def __str__(self):
+        return self.category
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.category)
+        super(GalleryCategory, self).save(*args, **kwargs)
+
+class Gallery(models.Model):
+    category        = models.ForeignKey(GalleryCategory, null=True, blank=True, related_name='galleries', on_delete=models.CASCADE)
+    title           = models.CharField(max_length=120)
+    slug            = models.SlugField(max_length=120, blank=True, null=True, unique=True)
+    image           = models.ImageField(upload_to='gallery')
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Gallery, self).save(*args, **kwargs)
+
+class HowToOrder(models.Model):
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)

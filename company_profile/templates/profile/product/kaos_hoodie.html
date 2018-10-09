@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} Produk {% endblock %}
+
+{% block slider %}{%endblock %}
+
+{% block content %}
+
+<!-- Page title -->
+<section id="page-title" class="background-overlay" data-parallax-image="{% static 'img/fashion-red-yellow-designer.jpg' %}">
+	<div class="container">
+		<div class="page-title">
+			<h1 class="text-uppercase text-medium">Produk</h1>
+			<span>Work is easy when you have all tools around you!</span>
+		</div>
+	</div>
+</section>
+<!-- end: Page title -->
+<!-- Page Menu -->
+<div class="page-menu menu-colored-background">
+        <div class="container">
+            <div class="menu-title">Produk <span>Kategori</span></div>
+            <nav>
+                <ul>
+                   <li><a href="{% url 'product_polos' %}">Kaos Polos</a> </li>
+                    <li class="active"><a href="{% url 'product_hoodie' %}">Kaos Hoodie</a> </li>
+                    <li><a href="page-menu-lines.html">Kaos Raglan</a> </li>
+                    <li><a href="page-menu-classic.html">Kids</a> </li>
+                    <li><a href="page-menu-line-bottom.html">Manset Hijab</a> </li>
+                </ul>
+            </nav>
+
+            <div id="menu-responsive-icon">
+                <i class="fa fa-reorder"></i>
+            </div>
+
+        </div>
+    </div>
+    <!-- end: Page Menu -->
+
+
+{% endblock %}
