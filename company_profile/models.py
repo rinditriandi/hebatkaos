@@ -74,6 +74,39 @@ class Gallery(models.Model):
         super(Gallery, self).save(*args, **kwargs)
 
 class HowToOrder(models.Model):
+    title           = models.CharField(max_length=120)
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.title
+
+class ProductCategory(models.Model):
+    category        = models.CharField(max_length=120)
+    slug            = models.SlugField(max_length=120, unique=True)
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.category
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.category)
+        super(ProductCategory, self).save(*args, **kwargs)
+
+class Product(models.Model):
+    Name            = models.CharField(max_length=255)
+    slug            = models.SlugField(max_length=255, unique=True)
+    model           = models.CharField(max_length=120)
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)
