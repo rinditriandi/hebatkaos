@@ -42,7 +42,7 @@ class About(models.Model):
 
 class GalleryCategory(models.Model):
     category        = models.CharField(max_length=128)
-    Slug            = models.SlugField(max_length=128, blank=True, null=True, unique=True)
+    slug            = models.SlugField(max_length=128, blank=True, null=True, unique=True)
     image_category  = models.ImageField(upload_to='gallery')
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)

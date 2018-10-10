@@ -10,7 +10,7 @@ urlpatterns = [
     path('pricelist/', pricelist, name='pricelist'),
 
     path('gallery/', gallery_category, name='gallery_category'),
-    path('gallery/<int:pk>/', gallery, name='gallery'),
+    path('gallery/<slug:slug>/', gallery, name='gallery'),
 
     path('product/kaos-polos/', product_polos, name='product_polos'),
     path('product/kaos-hoodie/', product_hoodie, name='product_hoodie'),

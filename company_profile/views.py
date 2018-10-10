@@ -30,8 +30,8 @@ def gallery_category(request):
     }
     return render(request, 'profile/gallery_category.html', context)
 
-def gallery(request, pk):
-    category = get_object_or_404(GalleryCategory, pk=pk)
+def gallery(request, slug):
+    category = get_object_or_404(GalleryCategory, slug=slug)
     
     context = {
         'category': category
