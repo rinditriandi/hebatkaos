@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load markdown_deux_tags %}
+
+{% block title %} Kualitas Kaos {% endblock %}
+
+{% block slider %}{%endblock %}
+
+{% block content %}
+
+
+<section class="p-b-10">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ol class="breadcrumb text-left fancy">
+					<li><a href="/">Home</a></li>
+					<li class="active">Quality</li>
+				</ol>
+			</div>
+        </div>
+        {% for quality in qualities %}
+		<div class="row">
+			<div class="col-md-6">
+				<div class="heading heading text-left">
+					<h2>{{ quality.title }}</h2>
+					<span class="lead">
+                        <img src="/media/{{ quality.quality_image }}" alt="">
+
+					</span>
+				</div>
+            </div>
+            <div class="col-md-6">
+                    <div class="heading heading text-left">
+                        <h2></h2>
+                        <span class="lead">
+                            {{ quality.description|markdown }}
+                        </span>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+	</div>
+</section>
+
+{% endblock %}

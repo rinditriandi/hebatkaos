@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.template.defaultfilters import slugify
+
+
 from django.db import models
 
 class General(models.Model):
@@ -26,6 +28,10 @@ class Contact(models.Model):
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        verbose_name = 'Hubungi Kami'
+        verbose_name_plural = 'Hubungi Kami'
+
     def __str__(self):
         return self.title
 
@@ -36,6 +42,11 @@ class About(models.Model):
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        verbose_name = 'Tentang Kami'
+        verbose_name_plural = 'Tentang Kami'
+        
 
     def __str__(self):
         return self.title
@@ -48,6 +59,9 @@ class GalleryCategory(models.Model):
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        verbose_name = 'Galeri Kategori'
+        verbose_name_plural = 'Galeri Kategori'
 
     def __str__(self):
         return self.category
@@ -65,6 +79,9 @@ class Gallery(models.Model):
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        verbose_name = 'Galeri'
+        verbose_name_plural = 'Galeri'
 
     def __str__(self):
         return self.title
@@ -84,10 +101,15 @@ class HowToOrder(models.Model):
 
 class ProductCategory(models.Model):
     category        = models.CharField(max_length=120)
-    slug            = models.SlugField(max_length=120, unique=True)
+    slug            = models.SlugField(max_length=120,blank=True, null=True, unique=True)
+    image           = models.ImageField(upload_to='product', blank=True, null=True)
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        verbose_name = 'Produk Kategori'
+        verbose_name_plural = 'Produk Kategori'
 
     def __str__(self):
         return self.category
@@ -97,16 +119,38 @@ class ProductCategory(models.Model):
         super(ProductCategory, self).save(*args, **kwargs)
 
 class Product(models.Model):
-    Name            = models.CharField(max_length=255)
-    slug            = models.SlugField(max_length=255, unique=True)
+    category        = models.ForeignKey(ProductCategory, null=True, blank=True, related_name='products', on_delete=models.CASCADE)
+    product_name    = models.CharField(max_length=255)
+    slug            = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    image1          = models.ImageField(upload_to='product', blank=True, null=True)
+    image2          = models.ImageField(upload_to='product', blank=True, null=True)
     model           = models.CharField(max_length=120)
     created_at      = models.DateTimeField(auto_now_add=True)
     updated_at      = models.DateTimeField(auto_now=True)
     user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
 
+    class Meta:
+        verbose_name = 'Produk'
+        verbose_name_plural = 'Produk'
+
     def __str__(self):
-        return self.name
+        return self.product_name
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.product_name)
         super(Product, self).save(*args, **kwargs)
+
+class Quality(models.Model):
+    title           = models.CharField(max_length=120)
+    quality_image   = models.ImageField(upload_to='quaility')
+    description     = models.TextField()
+    created_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
+    user_created    = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        verbose_name = 'Kualitas Kaos'
+        verbose_name_plural = 'Kualitas Kaos'
+
+    def __str__(self):
+        return self.title

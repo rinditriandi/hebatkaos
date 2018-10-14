@@ -1,10 +1,54 @@
+{% load staticfiles %}
 <div class="container">
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
             <li> <a href="{% url 'about' %}">Tentang Kami</a></li>
-            <li> <a href="{% url 'product_polos' %}">Produk</a></li>
-            <!-- <li class="dropdown"> <a href="#">Klien</a></li> -->
+            <li class="dropdown mega-menu-item"> <a href="#"> Produk</a>
+                <ul class="dropdown-menu">
+                    <li class="mega-menu-content">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="shop-category-box">
+                                    <a href="http://localhost:8000/product/kaos-polos/"><img alt="" src="{% static 'img/galeri/Webp.net-resizeimage.jpg' %}">
+                                        <div class="shop-category-box-title text-center">
+                                            <h6>Kaos Polos</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="shop-category-box">
+                                    <a href="http://localhost:8000/product/kaos-hoodie/"><img alt="" src="{% static 'img/galeri/Webp.net-resizeimage_1.jpg' %}">
+                                        <div class="shop-category-box-title text-center">
+                                            <h6>Kaos Hoodie</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="shop-category-box">
+                                    <a href="#"><img alt="" src="{% static 'img/produk/raglan.jpg' %}">
+                                        <div class="shop-category-box-title text-center">
+                                            <h6>Kaos Raglan</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="shop-category-box">
+                                    <a href="#"><img alt="" src="{% static 'img/galeri/Webp.net-resizeimage_2.jpg' %}">
+                                        <div class="shop-category-box-title text-center">
+                                            <h6>Kaos Wanita</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </li>
             <li> <a href="{% url 'pricelist' %}">Daftar Harga</a></li> 
             <li> <a href="{% url 'gallery_category' %}">Galeri</a></li> 
             <li><a href="{% url 'contact' %}">Hubungi Kami</a>

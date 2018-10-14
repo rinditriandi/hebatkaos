@@ -1,0 +1,117 @@
+.inspiro-slider .slide-captions h1 {
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: 700;
+
+}
+
+#footer.footer-light .copyright-content {
+    background-color: #00a79d;
+}
+
+.copyright-text {
+    color: #ffffff;
+}
+
+
+.copyright-content {
+    min-height: 50px;
+    padding: 0;
+}
+
+.widget a:hover {
+    color: #00a79d;
+}
+
+.widget .widget-title, .widget > h4 {
+    border-bottom: 1px solid #00a79d;
+}
+
+.widget .social-media a {
+    color: #ffffff !important;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>thead>tr>td {
+    background-color: #00a79d;
+    color: #ffffff;
+}
+
+th {
+    text-align: center;
+}
+
+section {
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #00a79d;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.text-dark, .text-dark h1, .text-dark h2, .text-dark h3, .text-dark h4, .text-dark h5, .text-dark h6, .text-dark p, .text-dark .lead, .text-dark a:not(.button), .text-dark a:not(.btn):hover, .text-dark i, .text-dark li, .text-dark label, .text-dark div:not(.alert), .text-dark span:not(.btn-label) {
+    color: #333 !important;
+    text-shadow: 2px 2px 8px #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer .widget {
+    text-transform: uppercase;
+}
+
+P {
+    font-family: 'Segoe UI' !important;
+}
+
+.icon-box.small > p {
+    font-weight: 400;
+    color: #333;
+    font-size: 15px;
+}
+
+.icon-box h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.hr-title abbr {
+    color: #ffffff;
+}
+
+.hr-title abbr {
+    background-color: #00a79d;
+}
+
+.lead {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.page-menu nav ul {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.page-menu.menu-colored-background {
+    background-color: #00a79d;
+}
+
+#mainMenu nav > ul > li .dropdown-menu {
+    background-color: #00a79d;
+}

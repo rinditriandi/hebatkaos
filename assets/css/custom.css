@@ -102,3 +102,24 @@ P {
     font-size: 17px;
     line-height: 1.7;
 }
+
+.page-menu nav ul {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.page-menu.menu-colored-background {
+    background-color: #00a79d;
+}
+
+#mainMenu nav > ul > li .dropdown-menu {
+    background-color: #f7f7f7;
+}
+
+.lead p {
+    font-size: 18px;
+}
+
+/* .shop-category-box .shop-category-box-title {
+    bottom: -30px;
+} */
